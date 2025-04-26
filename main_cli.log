@@ -1,0 +1,34 @@
+2025-04-21 14:13:07,591 - INFO - Inspection Menu has been selected!
+2025-04-21 14:15:59,472 - INFO - The menu has been launched
+2025-04-21 14:16:10,815 - INFO - Inspection Menu has been selected!
+2025-04-21 14:19:07,781 - INFO - Inspection Menu has been selected!
+2025-04-21 14:19:11,723 - INFO - Token validated successfully with API.
+2025-04-21 14:43:43,484 - INFO - The menu has been launched
+2025-04-21 14:43:50,649 - INFO - Inspection Menu has been selected!
+2025-04-21 14:43:54,750 - INFO - Token validated successfully with API.
+2025-04-21 14:51:11,048 - INFO - The menu has been launched
+2025-04-21 14:51:21,120 - INFO - Inspection Menu has been selected!
+2025-04-21 14:51:23,811 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-21 14:52:07,169 - INFO - Inspection Menu has been selected!
+2025-04-21 14:52:09,325 - INFO - Token validated successfully with API.
+2025-04-21 14:52:41,615 - INFO - Inspection Menu has been selected!
+2025-04-21 14:52:43,578 - INFO - Token validated successfully with API.
+2025-04-21 14:54:06,391 - INFO - Inspection Menu has been selected!
+2025-04-21 14:54:07,222 - INFO - Token validated successfully with API.
+2025-04-21 14:54:57,522 - INFO - Inspection Menu has been selected!
+2025-04-21 14:54:58,433 - INFO - Token validated successfully with API.
+2025-04-21 14:59:33,984 - INFO - The menu has been launched
+2025-04-21 14:59:44,094 - INFO - Inspection Menu has been selected!
+2025-04-21 14:59:51,503 - INFO - Token validated successfully with API.
+2025-04-21 15:27:07,518 - INFO - Inspection Menu has been selected!
+2025-04-21 15:27:08,565 - INFO - Token validated successfully with API.
+2025-04-21 15:59:26,095 - INFO - The menu has been launched
+2025-04-21 21:29:34,200 - INFO - Inspection Menu has been selected!
+2025-04-21 21:29:35,962 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-21 21:30:54,481 - INFO - Inspection Menu has been selected!
+2025-04-21 21:30:55,639 - INFO - Token validated successfully with API.
+2025-04-21 21:39:53,406 - INFO - Inspection Menu has been selected!
+2025-04-21 21:39:56,931 - INFO - Token validated successfully with API.
+2025-04-21 22:07:12,610 - INFO - The menu has been launched
+2025-04-21 22:07:28,232 - INFO - Inspection Menu has been selected!
+2025-04-21 22:07:30,163 - INFO - Token validated successfully with API.

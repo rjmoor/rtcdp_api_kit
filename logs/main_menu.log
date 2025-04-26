@@ -1,0 +1,74 @@
+2025-04-23 00:06:40,531 - INFO - Credentials menu selected.
+2025-04-23 00:07:23,769 - INFO - The main menu has been launched
+2025-04-23 00:07:29,333 - INFO - Credentials menu selected.
+2025-04-23 00:07:37,722 - INFO - Token validated successfully with API.
+2025-04-23 00:07:39,932 - INFO - Access token refreshed successfully.
+2025-04-23 00:07:40,164 - INFO - Token validated successfully with API.
+2025-04-23 00:08:07,512 - INFO - Datasets & Schemas menu selected.
+2025-04-23 00:08:12,892 - INFO - Token validated successfully with API.
+2025-04-23 00:08:12,969 - ERROR - Schema list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/data/foundation/schema/registry/schemas
+2025-04-23 00:41:50,785 - INFO - Datasets & Schemas menu selected.
+2025-04-23 00:41:56,076 - INFO - Token validated successfully with API.
+2025-04-23 00:41:56,150 - ERROR - Schema list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/data/foundation/schema/registry/schemas
+2025-04-23 00:45:56,401 - INFO - The main menu has been launched
+2025-04-23 00:46:06,137 - INFO - The main menu has been launched
+2025-04-23 00:46:21,038 - INFO - Datasets & Schemas menu selected.
+2025-04-23 00:46:30,899 - INFO - Token validated successfully with API.
+2025-04-23 00:46:30,974 - ERROR - Schema list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/data/foundation/schema/registry/schemas
+2025-04-23 00:57:54,026 - INFO - The main menu has been launched
+2025-04-23 00:58:05,275 - INFO - Datasets & Schemas menu selected.
+2025-04-23 00:58:09,230 - INFO - Token validated successfully with API.
+2025-04-23 00:58:09,315 - ERROR - Schema list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/data/foundation/schema/registry/schemas
+2025-04-23 00:58:18,904 - INFO - Token validated successfully with API.
+2025-04-23 00:59:12,080 - INFO - The main menu has been launched
+2025-04-23 01:09:04,694 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:09:15,697 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:09:19,466 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-23 01:09:45,025 - INFO - The main menu has been launched
+2025-04-23 01:09:53,558 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:09:58,087 - INFO - Token validated successfully with API.
+2025-04-23 01:10:31,394 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:10:33,711 - INFO - Token validated successfully with API.
+2025-04-23 01:19:56,738 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:24:41,853 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:24:43,802 - INFO - Token validated successfully with API.
+2025-04-23 01:39:10,055 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:40:19,444 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:40:21,665 - INFO - Token validated successfully with API.
+2025-04-23 01:41:52,661 - INFO - Token validated successfully with API.
+2025-04-23 01:42:13,429 - INFO - Datasets & Schemas menu selected.
+2025-04-23 01:42:19,333 - INFO - Token validated successfully with API.
+2025-04-23 09:26:37,236 - INFO - Datasets & Schemas menu selected.
+2025-04-23 09:26:40,692 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-23 09:27:11,458 - INFO - The main menu has been launched
+2025-04-23 09:27:35,606 - INFO - Datasets & Schemas menu selected.
+2025-04-23 09:27:38,802 - INFO - Token validated successfully with API.
+2025-04-23 09:28:26,259 - INFO - The main menu has been launched
+2025-04-23 20:57:53,225 - INFO - Credentials menu selected.
+2025-04-23 20:57:55,777 - INFO - Access token refreshed successfully.
+2025-04-23 20:57:56,481 - INFO - Token validated successfully with API.
+2025-04-23 20:58:18,392 - INFO - Datasets & Schemas menu selected.
+2025-04-23 21:00:05,870 - INFO - Token validated successfully with API.
+2025-04-23 21:00:28,948 - INFO - Token validated successfully with API.
+2025-04-23 21:00:39,730 - ERROR - Namespace dataset search failed: 404 Client Error: Not Found for url: https://platform.adobe.io/catalog/dataSets
+2025-04-23 22:02:19,231 - INFO - Segmentation menu selected.
+2025-04-23 22:06:04,908 - INFO - Segmentation menu selected.
+2025-04-23 23:44:36,007 - INFO - Segmentation menu selected.
+2025-04-23 23:44:36,117 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-23 23:44:36,163 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-23 23:44:36,204 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-23 23:45:28,976 - INFO - The main menu has been launched
+2025-04-23 23:45:35,460 - INFO - Credentials menu selected.
+2025-04-23 23:45:38,985 - INFO - Access token refreshed successfully.
+2025-04-23 23:45:39,223 - INFO - Token validated successfully with API.
+2025-04-23 23:45:47,673 - INFO - Segmentation menu selected.
+2025-04-23 23:45:47,904 - INFO - Token validated successfully with API.
+2025-04-23 23:45:48,138 - INFO - Token validated successfully with API.
+2025-04-23 23:45:48,355 - INFO - Token validated successfully with API.
+2025-04-23 23:46:05,624 - INFO - Segmentation menu selected.
+2025-04-23 23:46:05,840 - INFO - Token validated successfully with API.
+2025-04-23 23:46:06,064 - INFO - Token validated successfully with API.
+2025-04-23 23:46:06,292 - INFO - Token validated successfully with API.
+2025-04-23 23:53:38,526 - INFO - The main menu has been launched
+2025-04-23 23:53:47,436 - INFO - Segmentation menu selected.
+2025-04-23 23:53:47,685 - INFO - Token validated successfully with API.

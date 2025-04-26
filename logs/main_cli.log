@@ -1,0 +1,21 @@
+2025-04-22 15:58:41,175 - INFO - Credential Menu has selected!
+2025-04-22 15:58:47,059 - INFO - Access token refreshed successfully.
+2025-04-22 15:58:47,332 - INFO - Token validated successfully with API.
+2025-04-22 15:58:56,668 - INFO - Access token refreshed successfully.
+2025-04-22 15:58:56,896 - INFO - Token validated successfully with API.
+2025-04-22 15:59:09,887 - INFO - Inspection Menu has been selected!
+2025-04-22 15:59:28,195 - INFO - Token validated successfully with API.
+2025-04-22 15:59:28,285 - ERROR - Dataset list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/catalog/dataSets
+2025-04-22 15:59:37,417 - INFO - Token validated successfully with API.
+2025-04-22 15:59:37,504 - ERROR - Dataset list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/catalog/dataSets
+2025-04-22 17:54:14,590 - INFO - The menu has been launched
+2025-04-22 22:16:51,066 - INFO - Credentials menu selected.
+2025-04-22 22:16:58,225 - ERROR - Token validation request failed: HTTPSConnectionPool(host='platform.adobe.io', port=443): Max retries exceeded with url: /data/core/ups/config/mergePolicies (Caused by SSLError(SSLCertVerificationError(1, '[SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1020)')))
+2025-04-22 22:17:33,600 - INFO - Token validated successfully with API.
+2025-04-22 22:17:42,561 - INFO - Access token refreshed successfully.
+2025-04-22 22:17:42,799 - INFO - Token validated successfully with API.
+2025-04-22 22:17:58,502 - INFO - Datasets & Schemas menu selected.
+2025-04-22 22:18:08,316 - INFO - Token validated successfully with API.
+2025-04-22 22:18:08,398 - ERROR - Schema list request failed: 404 Client Error: Not Found for url: https://platform.adobe.io/data/foundation/schema/registry/schemas
+2025-04-22 22:18:40,905 - INFO - Token validated successfully with API.
+2025-04-22 22:19:08,178 - INFO - The main menu has been launched

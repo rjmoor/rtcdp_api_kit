@@ -1,1 +1,4 @@
 .DS_Store
+*.pyc
+config/rol-credentials.json
+config/cit-credentials.json
