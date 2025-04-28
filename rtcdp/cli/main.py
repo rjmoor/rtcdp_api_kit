@@ -66,3 +66,4 @@ def launch_menu():
         else:
             print("[red]❌ Invalid input. Please choose a valid option.[/red]")
 
+ 
