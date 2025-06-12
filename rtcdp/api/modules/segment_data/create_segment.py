@@ -1,6 +1,6 @@
 import requests
 import json
-from modules.segment_data.merge_policy_utils import MergePolicyHelper
+from api.modules.segment_data.merge_policy_utils import MergePolicyHelper
 
 class CreateSegment:
     def __init__(self, auth_helper):

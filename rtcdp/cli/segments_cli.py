@@ -1,7 +1,8 @@
-from utils.auth_helper import AuthHelper
-from modules.segment_data.audience import AudienceHandler
-from modules.segment_data.segment import SegmentManager
-from modules.segment_data.snapshot import SnapshotExporter
+# rtcdp/cli/segments_cli.py
+from rtcdp.utils.auth_helper import AuthHelper
+from api.modules.segment_data.audience import AudienceHandler
+from api.modules.segment_data.segment import SegmentManager
+from api.modules.segment_data.snapshot import SnapshotExporter
 from rich import print
 
 def segments_menu():

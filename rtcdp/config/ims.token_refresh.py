@@ -1,12 +1,15 @@
-import requests
-import json
-import logging
-import time
 import os
+import json
+import time
+import logging
+import requests
 
-# Configure logging
+# === Setup Logging ===
+LOG_DIR = "logs"
+os.makedirs(LOG_DIR, exist_ok=True)
+
 logging.basicConfig(
-    filename="token_refresh.log",
+    filename=os.path.join(LOG_DIR, "token.log"),
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
@@ -29,29 +32,33 @@ class AEPTokenRefresher:
         """
         try:
             with open(self.credentials_file, "r") as file:
-                return json.load(file)
-        except (FileNotFoundError, json.JSONDecodeError) as e:
+                creds = json.load(file)
+                if not isinstance(creds, dict):
+                    raise ValueError("Credentials file is not a valid JSON object.")
+                return creds
+        except (FileNotFoundError, json.JSONDecodeError, ValueError) as e:
             logging.error(f"Error loading credentials: {e}")
-            raise
+            print(f"❌ Failed to load credentials: {e}", flush=True)
+            return {}
 
     def update_credentials_file(self, new_token, expires_in):
         """
         Update the credentials file with the new access token and expiration timestamp.
         """
         try:
-            expiration_time = int(time.time()) + expires_in  # Calculate expiration
+            expiration_time = int(time.time()) + expires_in
             self.credentials["access_token"] = new_token
             self.credentials["token_expires_at"] = expiration_time
 
             with open(self.credentials_file, "w") as file:
                 json.dump(self.credentials, file, indent=4)
-            
-            logging.info(f"Access token updated successfully, expires at {expiration_time}.")
-            print(f"✔ Access token updated. Expires at {time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(expiration_time))}")
+
+            logging.info(f"✔ Access token updated successfully, expires at {expiration_time}.")
+            print(f"✔ Access token updated. Expires at [bold cyan]{time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(expiration_time))}[/bold cyan]", flush=True)
 
         except Exception as e:
             logging.error(f"Error updating credentials file: {e}")
-            print(f"❌ Failed to update credentials file: {e}")
+            print(f"❌ Failed to update credentials file: {e}", flush=True)
 
     def refresh_token(self):
         """
@@ -71,18 +78,17 @@ class AEPTokenRefresher:
             response_json = response.json()
 
             new_token = response_json["access_token"]
-            expires_in = response_json.get("expires_in", 86400)  # Default: 24 hours
+            expires_in = response_json.get("expires_in", 86400)
 
-            # Update credentials file
             self.update_credentials_file(new_token, expires_in)
-
-            logging.info("Access token refreshed successfully.")
-            print("✔ New Access Token:", new_token)
+            logging.info("✔ Token refreshed successfully.")
+            print("✔ New Access Token:", new_token, flush=True)
             return new_token
+
         except requests.RequestException as e:
-            logging.error(f"Error refreshing access token: {e}")
-            print(f"❌ Failed to refresh access token: {e}")
-            raise
+            logging.error(f"❌ Token refresh failed: {e}")
+            print(f"❌ Failed to refresh access token: {e}", flush=True)
+            return None
 
     def is_token_expired(self):
         """
@@ -93,17 +99,29 @@ class AEPTokenRefresher:
 
     def get_access_token(self):
         """
-        Retrieve a valid access token, refreshing it if needed.
+        Get valid access token or refresh if expired.
         """
+        if not self.credentials:
+            print("⚠️ No valid credentials loaded.", flush=True)
+            return None
+
         if self.is_token_expired():
-            print("🔄 Token expired. Refreshing...")
+            print("🔄 Token expired. Refreshing...", flush=True)
             return self.refresh_token()
-        print("✔ Using existing valid token.")
-        return self.credentials["access_token"]
 
+        print("✔ Using existing valid token.", flush=True)
+        return self.credentials.get("access_token")
+
+
+# === Entry point for subprocess execution ===
 if __name__ == "__main__":
-    # Dynamically find the credentials file inside the CREDS folder
     credentials_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "cit-credentials.json"))
-
     refresher = AEPTokenRefresher(credentials_path)
-    refresher.get_access_token()
+
+    token = refresher.get_access_token()
+    if token:
+        logging.info("✅ Token refresh script completed successfully.")
+        print("✅ Token refresh complete.", flush=True)
+    else:
+        logging.error("❌ Token refresh script failed.")
+        print("❌ Token refresh failed.", flush=True)

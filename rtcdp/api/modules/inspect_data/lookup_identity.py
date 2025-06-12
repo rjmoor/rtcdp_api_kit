@@ -3,7 +3,7 @@
 import logging
 import requests
 from rich import print
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
 
 # Logging setup
 LOG_DIR = "logs"

@@ -1,5 +1,5 @@
 from BOUNTEOUS.KIT.rtcdp_api_kit.cli.segments_cli import SegmentHandler
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
 
 if __name__ == "__main__":
     auth = AuthHelper()

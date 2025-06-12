@@ -1,7 +1,7 @@
 # cli/credentials_cli.py
 
 from rich import print
-from modules.credentials_data.credentials import CredentialsManager
+from rtcdp.api.modules.credentials_data.credentials import CredentialsManager
 
 def credentials_menu():
     manager = CredentialsManager()

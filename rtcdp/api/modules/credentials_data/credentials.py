@@ -7,7 +7,7 @@ import time
 from datetime import datetime, timedelta
 import requests
 from rich import print
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
 
 # Configure Logging
 LOG_DIR = "logs"

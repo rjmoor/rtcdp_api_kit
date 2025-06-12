@@ -2,7 +2,7 @@
 
 import requests
 import logging
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
 from rich import print
 
 class AudienceHandler:

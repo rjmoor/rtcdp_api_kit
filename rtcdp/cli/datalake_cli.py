@@ -17,26 +17,26 @@ def datalake_menu():
         choice = input("Select an option: ").strip()
 
         if choice == "1":
-            from cli.schema_cli import schema_menu
+            from rtcdp.cli.schema_cli import schema_menu
             schema_menu()
         elif choice == "2":
-            from cli.dataset_cli import dataset_menu
+            from rtcdp.cli.dataset_cli import dataset_menu
             dataset_menu()
         elif choice == "3":
-            from modules.inspect_data.queries import QueryHandler
+            from api.modules.inspect_data.queries import QueryHandler
             query_handler = QueryHandler()
             query_handler.handle_queries()
         elif choice == "4":
-            from modules.inspect_data.search_namespace import NamespaceHandler
+            from api.modules.inspect_data.search_namespace import NamespaceHandler
             namespace_handler = NamespaceHandler()
             namespace_handler.handle_namespace_search()
         elif choice == "5":
-            from modules.inspect_data.lookup_identity import IdentityHandler
+            from api.modules.inspect_data.lookup_identity import IdentityHandler
             identity_handler = IdentityHandler()
             identity_handler.handle_identity_lookup()
         elif choice == "6":
-            from cli.segments_cli import SegmentHandler
-            from utils.auth_helper import AuthHelper
+            from rtcdp.cli.segments_cli import SegmentHandler
+            from rtcdp.utils.auth_helper import AuthHelper
             auth = AuthHelper()
             segment_handler = SegmentHandler(auth)
             segment_handler.run_cli()

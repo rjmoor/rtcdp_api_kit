@@ -2,8 +2,8 @@
 
 import time
 import requests
-from utils.auth_helper import AuthHelper
-from modules.segment_data.merge_policy_utils import MergePolicyHelper
+from rtcdp.utils.auth_helper import AuthHelper
+from api.modules.segment_data.merge_policy_utils import MergePolicyHelper
 from rich import print
 
 class SegmentManager:

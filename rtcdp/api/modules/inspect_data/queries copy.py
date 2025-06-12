@@ -1,28 +1,28 @@
-# rtcdp/api/modules/inspect_data/queries.py
+# cli/inspect_data/queries.py
 
 import os
 import yaml
-import time
 import logging
+import time
 import requests
-import pandas as pd
 from rich import print
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
+import csv
+import pandas as pd
 
+# Logging setup
 LOG_DIR = "logs"
-os.makedirs(LOG_DIR, exist_ok=True)
-
 QUERY_LOG = "queries.log"
 LAST_QUERY_PATH = os.path.join(LOG_DIR, "last_query.sql")
 RESULT_CSV_PATH = os.path.join(LOG_DIR, "last_query_results.csv")
-QUERIES_YML_PATH = "queries/queries.yml"
-SQL_QUERIES_PATH = "rtcdp/sql"
-
+os.makedirs(LOG_DIR, exist_ok=True)
 logging.basicConfig(
     filename=os.path.join(LOG_DIR, QUERY_LOG),
     level=logging.INFO,
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
+
+QUERIES_YML_PATH = "queries/queries.yml"
 
 class QueryHandler:
     def __init__(self):
@@ -34,33 +34,22 @@ class QueryHandler:
         self.token = self.auth.get_access_token()
 
     def load_queries(self):
-        queries = {}
+        if not os.path.exists(QUERIES_YML_PATH):
+            print(f"[yellow]⚠️ No query file found at {QUERIES_YML_PATH}[/yellow]")
+            return {}
 
-        if os.path.exists(QUERIES_YML_PATH):
-            try:
-                with open(QUERIES_YML_PATH, 'r') as stream:
-                    queries.update(yaml.safe_load(stream) or {})
-            except yaml.YAMLError as e:
-                logging.error(f"Failed to load YAML: {e}")
-                print(f"[red]❌ Error loading queries YAML: {e}[/red]")
-
-        # Add SQL files
-        for idx, filename in enumerate(os.listdir(SQL_QUERIES_PATH), 1):
-            if filename.endswith(".sql"):
-                path = os.path.join(SQL_QUERIES_PATH, filename)
-                with open(path, "r") as f:
-                    queries[f"file_{idx}"] = {
-                        "alias": filename.replace(".sql", ""),
-                        "description": f"Query from file: {filename}",
-                        "sql": f.read()
-                    }
-
-        return queries
+        try:
+            with open(QUERIES_YML_PATH, 'r') as stream:
+                return yaml.safe_load(stream)
+        except yaml.YAMLError as e:
+            logging.error(f"Failed to load YAML: {e}")
+            print(f"[red]❌ Error loading queries YAML: {e}[/red]")
+            return {}
 
     def list_queries(self, queries):
         print("\n[bold]📑 AVAILABLE QUERIES[/bold]")
         for key, meta in queries.items():
-            print(f"[bold cyan]{key}[/bold cyan]: {meta.get('alias')} - {meta.get('description')}")
+            print(f"[bold cyan]{key}[/bold cyan]: {meta.get('alias', 'No alias')} - {meta.get('description', 'No description')}")
 
     def prompt_and_run_query(self):
         queries = self.load_queries()
@@ -68,7 +57,7 @@ class QueryHandler:
             return None
 
         self.list_queries(queries)
-        selected = input("\nEnter query alias or key: ").strip()
+        selected = input("\nEnter query alias or number: ").strip()
 
         matched_key = None
         for key, meta in queries.items():
@@ -81,36 +70,16 @@ class QueryHandler:
             return None
 
         query_template = queries[matched_key].get("sql", "")
-        placeholders = [p.strip("{}") for p in query_template.split() if p.startswith("{{") and p.endswith("}}")]
+        placeholders = [part.strip("{}") for part in query_template.split() if part.startswith("{{") and part.endswith("}}")]
 
         filled_query = query_template
         for ph in placeholders:
-            val = input(f"Enter value for [{ph}]: ")
-            filled_query = filled_query.replace(f"{{{{{ph}}}}}", val)
+            user_value = input(f"Enter value for [{ph}]: ")
+            filled_query = filled_query.replace(f"{{{{{ph}}}}}", user_value)
 
         print("\n[bold green]🧠 Final Query to Run:[/bold green]")
         print(filled_query)
-
-        self.save_last_query(filled_query)
         return filled_query
-
-    def save_last_query(self, sql):
-        with open(LAST_QUERY_PATH, "w") as f:
-            f.write(sql)
-
-    def re_run_last_query(self):
-        if not os.path.exists(LAST_QUERY_PATH):
-            print("[yellow]⚠️ No previous query found.[/yellow]")
-            return
-
-        with open(LAST_QUERY_PATH, "r") as f:
-            sql = f.read()
-            print(f"[bold green]🧠 Re-running Last Query:[/bold green]\n{sql}")
-            query_id = self.submit_query(sql)
-            if query_id:
-                status = self.poll_query_status(query_id)
-                if status == "SUCCEEDED":
-                    self.download_query_results(query_id)
 
     def submit_query(self, sql):
         headers = {
@@ -120,9 +89,13 @@ class QueryHandler:
             "x-sandbox-name": self.sandbox,
             "Content-Type": "application/json"
         }
-        body = {"name": "CLI Query Submission", "sql": sql, "description": "Submitted via CLI"}
-        res = requests.post(f"{self.base_url}/data/foundation/query/queries", json=body, headers=headers)
+        body = {
+            "name": "CLI Query Submission",
+            "sql": sql,
+            "description": "Submitted via CLI"
+        }
 
+        res = requests.post(f"{self.base_url}/data/foundation/query/queries", json=body, headers=headers)
         if res.status_code != 201:
             print(f"[red]❌ Failed to submit query: {res.text}[/red]")
             return None
@@ -150,6 +123,26 @@ class QueryHandler:
             time.sleep(5)
         return state
 
+    def save_last_query(self, sql):
+        with open(LAST_QUERY_PATH, "w") as f:
+            f.write(sql)
+
+    def re_run_last_query(self):
+        if not os.path.exists(LAST_QUERY_PATH):
+            print("[yellow]⚠️ No previous query found.[/yellow]")
+            return
+
+        with open(LAST_QUERY_PATH, "r") as f:
+            sql = f.read()
+
+        print(f"[bold green]🧠 Re-running Last Query:[/bold green]\n{sql}")
+        query_id = self.submit_query(sql)
+        if query_id:
+            status = self.poll_query_status(query_id)
+            print(f"[blue]📌 Final Status: {status}[/blue]")
+            if status == "SUCCEEDED":
+                self.download_query_results(query_id)
+
     def download_query_results(self, query_id):
         headers = {
             "Authorization": f"Bearer {self.token}",
@@ -160,7 +153,6 @@ class QueryHandler:
 
         url = f"{self.base_url}/data/foundation/query/queries/{query_id}/results"
         res = requests.get(url, headers=headers)
-
         if res.status_code != 200:
             print(f"[red]❌ Could not download results: {res.text}[/red]")
             return
@@ -172,9 +164,12 @@ class QueryHandler:
                 return
 
             keys = rows[0].keys()
-            pd.DataFrame(rows).to_csv(RESULT_CSV_PATH, index=False)
-            print(f"[green]📁 Results saved to {RESULT_CSV_PATH}[/green]")
+            with open(RESULT_CSV_PATH, "w", newline='') as f:
+                writer = csv.DictWriter(f, fieldnames=keys)
+                writer.writeheader()
+                writer.writerows(rows)
 
+            print(f"[green]📁 Results saved to {RESULT_CSV_PATH}[/green]")
         except Exception as e:
             print(f"[red]❌ Failed to process results: {e}[/red]")
 
@@ -196,16 +191,18 @@ class QueryHandler:
             print("1️⃣ Run a Saved Query")
             print("2️⃣ Re-run Last Query")
             print("3️⃣ Show Last Query Results")
-            print("0️⃣ Back to Inspect Datalake Menu")
+            print("4️⃣ Back to Inspect Datalake Menu")
 
             choice = input("Select an option: ").strip()
 
             if choice == "1":
                 sql = self.prompt_and_run_query()
                 if sql:
+                    self.save_last_query(sql)
                     query_id = self.submit_query(sql)
                     if query_id:
                         status = self.poll_query_status(query_id)
+                        print(f"[blue]📌 Final Status: {status}[/blue]")
                         if status == "SUCCEEDED":
                             self.download_query_results(query_id)
 
@@ -215,7 +212,7 @@ class QueryHandler:
             elif choice == "3":
                 self.show_last_results()
 
-            elif choice == "0":
+            elif choice == "4":
                 break
             else:
                 print("[red]❌ Invalid choice. Try again.[/red]")

@@ -30,32 +30,32 @@ def launch_menu():
         choice = input("\nSelect a menu option: ").strip()
 
         if choice == "1":
-            from cli.credentials_cli import credentials_menu
+            from rtcdp.cli.credentials_cli import credentials_menu
             logging.info("Credentials menu selected.")
             credentials_menu()
 
         elif choice == "2":
-            from cli.datalake_cli import datalake_menu
+            from rtcdp.cli.datalake_cli import datalake_menu
             logging.info("Datasets & Schemas menu selected.")
             datalake_menu()
 
         elif choice == "3":
-            from cli.segments_cli import segments_menu
+            from rtcdp.cli.segments_cli import segments_menu
             logging.info("Segmentation menu selected.")
             segments_menu()
 
         elif choice == "4":
-            from cli.reports_cli import reports_menu
+            from rtcdp.cli.reports_cli import reports_menu
             logging.info("Queries & Reports menu selected.")
             reports_menu()
 
         elif choice == "5":
-            from cli.configure_cli import configure_menu
+            from rtcdp.cli.configure_cli import configure_menu
             logging.info("Configuration menu selected.")
             configure_menu()
 
         elif choice == "6":
-            from cli.troubleshoot_cli import troubleshoot_menu
+            from rtcdp.cli.troubleshoot_cli import troubleshoot_menu
             logging.info("Troubleshooting menu selected.")
             troubleshoot_menu()
 

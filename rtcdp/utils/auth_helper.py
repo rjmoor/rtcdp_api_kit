@@ -16,30 +16,38 @@ logging.basicConfig(
 )
 
 class AuthHelper:
-    def __init__(self, credentials_path="config/cit-credentials.json"):
+    def __init__(self, credentials_path="rtcdp/config/cit-credentials.json"):
         self.credentials_path = credentials_path
         self.credentials = self.load_credentials()
 
     def load_credentials(self):
+        if not os.path.exists(self.credentials_path):
+            print(f"[red]❌ Credentials file not found: {self.credentials_path}[/red]")
+            return {}
+
         try:
-            with open(self.credentials_path, "r") as file:
-                self.credentials = json.load(file)
-                return self.credentials
+            with open(self.credentials_path, "r") as f:
+                creds = json.load(f)
+                if not isinstance(creds, dict):
+                    raise ValueError("Credentials file does not contain a valid JSON object.")
+                return creds
         except Exception as e:
-            logging.error(f"Error loading credentials: {e}")
-            return None
+            print(f"[red]❌ Failed to load credentials: {e}[/red]")
+            return {}
+
 
     def is_token_expired(self):
         if not self.credentials:
+            print(f"Loading Credentials")
             self.load_credentials()
         return time.time() >= self.credentials.get("token_expires_at", 0)
 
     def refresh_token(self):
         try:
             print("[cyan]🔄 Refreshing token via ims.token_refresh.py...[/cyan]")
-            subprocess.run(["python3", "config/ims.token_refresh.py"], check=True, capture_output=True, text=True)
+            subprocess.run(["python3", "rtcdp/config/ims.token_refresh.py"], check=True, capture_output=True, text=True)
             logging.info("Access token refreshed successfully.")
-            self.load_credentials()  # Reload updated token
+            self.credentials = self.load_credentials()
         except subprocess.CalledProcessError as e:
             logging.error(f"Token refresh failed: {e.stderr}")
             print("[red]❌ Token refresh failed. See token.log for details.[/red]")
@@ -74,6 +82,11 @@ class AuthHelper:
             return False
 
     def get_access_token(self):
+        self.credentials = self.load_credentials()
+        if not self.credentials or "access_token" not in self.credentials:
+            print("[red]❌ Access token not found in credentials.[/red]")
+            return None
+        
         if self.is_token_expired():
             print("[yellow]⚠️ Token expired. Attempting refresh...[/yellow]")
             self.refresh_token()

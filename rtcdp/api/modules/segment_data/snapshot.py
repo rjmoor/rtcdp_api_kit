@@ -1,7 +1,7 @@
 # modules/segment_data/snapshot_export.py
 
 import requests
-from utils.auth_helper import AuthHelper
+from rtcdp.utils.auth_helper import AuthHelper
 from rich import print
 from datetime import datetime
 

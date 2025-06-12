@@ -78,3 +78,116 @@
 2025-06-10 21:22:21,165 - INFO - Launching main menu...
 2025-06-10 21:31:37,246 - INFO - Logging system initialized.
 2025-06-10 21:31:37,246 - INFO - Launching main menu...
+2025-06-10 21:51:44,072 - INFO - Logging system initialized.
+2025-06-10 21:51:44,072 - INFO - Launching main menu...
+2025-06-11 08:46:43,565 - INFO - Logging system initialized.
+2025-06-11 08:46:43,565 - INFO - Launching main menu...
+2025-06-11 08:53:15,782 - INFO - Logging system initialized.
+2025-06-11 08:53:15,782 - INFO - Launching main menu...
+2025-06-11 08:53:17,545 - INFO - Datasets & Schemas menu selected.
+2025-06-11 08:54:42,294 - INFO - Logging system initialized.
+2025-06-11 08:54:42,294 - INFO - Launching main menu...
+2025-06-11 08:54:44,514 - INFO - Datasets & Schemas menu selected.
+2025-06-11 08:55:45,213 - INFO - Logging system initialized.
+2025-06-11 08:55:45,214 - INFO - Launching main menu...
+2025-06-11 08:55:47,030 - INFO - Datasets & Schemas menu selected.
+2025-06-11 08:57:37,208 - INFO - Logging system initialized.
+2025-06-11 08:57:37,208 - INFO - Launching main menu...
+2025-06-11 08:57:38,990 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:00:29,199 - INFO - Logging system initialized.
+2025-06-11 09:00:29,199 - INFO - Launching main menu...
+2025-06-11 09:00:31,160 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:01:22,485 - INFO - Logging system initialized.
+2025-06-11 09:01:22,485 - INFO - Launching main menu...
+2025-06-11 09:01:23,977 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:01:25,061 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:02:18,629 - INFO - Logging system initialized.
+2025-06-11 09:02:18,629 - INFO - Launching main menu...
+2025-06-11 09:04:12,357 - INFO - Logging system initialized.
+2025-06-11 09:04:12,357 - INFO - Launching main menu...
+2025-06-11 09:04:15,610 - INFO - Credentials menu selected.
+2025-06-11 09:04:15,610 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:04:24,066 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:04:24,067 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:04:31,733 - INFO - Logging system initialized.
+2025-06-11 09:04:31,733 - INFO - Launching main menu...
+2025-06-11 09:04:33,199 - INFO - Credentials menu selected.
+2025-06-11 09:04:33,199 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:04:33,905 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:04:38,970 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:04:43,529 - ERROR - Error loading credentials: [Errno 2] No such file or directory: 'config/cit-credentials.json'
+2025-06-11 09:11:32,848 - INFO - Logging system initialized.
+2025-06-11 09:11:32,848 - INFO - Launching main menu...
+2025-06-11 09:11:34,409 - INFO - Credentials menu selected.
+2025-06-11 09:11:37,534 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:11:37,556 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:13:10,972 - INFO - Main menu session ended.
+2025-06-11 09:13:13,808 - INFO - Logging system initialized.
+2025-06-11 09:13:13,808 - INFO - Launching main menu...
+2025-06-11 09:13:15,228 - INFO - Credentials menu selected.
+2025-06-11 09:13:17,560 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:13:17,588 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:13:17,705 - WARNING - Token invalid. Refreshing automatically.
+2025-06-11 09:13:17,732 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:13:44,813 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:13:44,895 - WARNING - Token invalid. Refreshing automatically.
+2025-06-11 09:13:44,928 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:17:37,078 - INFO - Main menu session ended.
+2025-06-11 09:17:40,997 - INFO - Logging system initialized.
+2025-06-11 09:17:40,997 - INFO - Launching main menu...
+2025-06-11 09:17:42,716 - INFO - Credentials menu selected.
+2025-06-11 09:17:47,760 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:17:47,878 - WARNING - Token invalid. Refreshing automatically.
+2025-06-11 09:17:47,909 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:27:46,881 - INFO - Main menu session ended.
+2025-06-11 09:27:49,503 - INFO - Logging system initialized.
+2025-06-11 09:27:49,503 - INFO - Launching main menu...
+2025-06-11 09:27:51,140 - INFO - Credentials menu selected.
+2025-06-11 09:27:54,694 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:27:54,826 - WARNING - Token invalid. Refreshing automatically.
+2025-06-11 09:27:54,864 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:29:00,322 - INFO - Main menu session ended.
+2025-06-11 09:30:34,784 - INFO - Logging system initialized.
+2025-06-11 09:30:34,785 - INFO - Launching main menu...
+2025-06-11 09:30:39,677 - INFO - Credentials menu selected.
+2025-06-11 09:30:58,043 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:30:58,063 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:30:58,184 - WARNING - Token invalid. Refreshing automatically.
+2025-06-11 09:30:58,213 - ERROR - Token refresh failed: python3: can't open file '/Users/Rahmel.moore/Documents/GitHub/rtcdp_api_kit/config/ims.token_refresh.py': [Errno 2] No such file or directory
+
+2025-06-11 09:41:01,488 - INFO - Main menu session ended.
+2025-06-11 09:41:03,557 - INFO - Logging system initialized.
+2025-06-11 09:41:03,557 - INFO - Launching main menu...
+2025-06-11 09:41:05,064 - INFO - Credentials menu selected.
+2025-06-11 09:41:08,723 - INFO - Access token refreshed successfully.
+2025-06-11 09:41:09,079 - INFO - Token validated successfully with API.
+2025-06-11 09:41:21,930 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:41:23,077 - INFO - Token validated successfully with API.
+2025-06-11 09:44:59,629 - INFO - Logging system initialized.
+2025-06-11 09:44:59,629 - INFO - Launching main menu...
+2025-06-11 09:45:01,301 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:45:45,454 - INFO - Logging system initialized.
+2025-06-11 09:45:45,454 - INFO - Launching main menu...
+2025-06-11 09:45:47,378 - INFO - Datasets & Schemas menu selected.
+2025-06-11 09:45:49,327 - INFO - Token validated successfully with API.
+2025-06-11 14:01:26,458 - INFO - Logging system initialized.
+2025-06-11 14:01:26,459 - INFO - Launching main menu...

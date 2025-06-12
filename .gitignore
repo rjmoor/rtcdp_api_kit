@@ -4,3 +4,6 @@ config/rol-credentials.json
 config/cit-credentials.json
 rtcdp/config/cit-credentials.json
 rtcdp/config/rol-credentials.json
+*.log
+*.log
+*.log

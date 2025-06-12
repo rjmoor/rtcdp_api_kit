@@ -1,5 +1,5 @@
 from rich import print
-from modules.schema_data.schemas import SchemaManager
+from rtcdp.api.modules.schema_data.schemas import SchemaManager
 
 def schema_menu():
     manager = SchemaManager()
